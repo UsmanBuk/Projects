@@ -14,7 +14,7 @@ def find_post(post_id: int):
 @router.post("/post", response_model=UserPost, status_code=201)
 async def create_post(post: UserPostIn):
     # Convert the Pydantic model to a Python dictionary
-    data = post.dict()
+    data = post.model_dump()
     # Generate a new ID based on the current number of posts in the table
     last_record_id = len(post_table)
     # Create a new post by spreading the data and adding the generated ID
@@ -36,7 +36,7 @@ async def create_comment(comment: CommentIn):
     post = find_post(comment.post_id)
     if not post:
         raise HTTPException(status_code=404, detail="Post not found")
-    data = comment.dict()
+    data = comment.model_dump()
     last_record_id = len(comment_table)
     new_comment = {**data, "id": last_record_id}
     comment_table[last_record_id] = new_comment
