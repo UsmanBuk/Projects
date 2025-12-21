@@ -1,9 +1,9 @@
 # Repository Information
 
 ## GitHub Repository
-- **Repository URL**: https://github.com/UsmanBuk/mini-projects
+- **Repository URL**: https://github.com/UsmanBuk/projects
 - **Owner**: UsmanBuk
-- **Repository Name**: mini-projects
+- **Repository Name**: projects
 
 ## Description
 This folder contains various mini projects for learning and experimentation.
